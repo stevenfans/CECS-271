@@ -1,0 +1,27 @@
+% problem 4.8
+clc; close all; 
+
+L = 10;    %10 meter long 
+x = 0:0.01:L; 
+T = 1000; %1000 N
+W = 100; %load is 100 N/m
+EI = 10000;
+a_squared = T/EI; 
+a = sqrt(a_squared); 
+
+first_part = (W*EI)/(T*T); 
+second_part  = (cosh(a*(L/2-x))./cosh(a*L)/2)-1;
+third_part =   W*x.*(L-x)/(2*T); 
+
+% y = first_part*second_part+third_part;
+y = W*EI/(T*T)*...
+    (cosh(a*(L/2-x))./cosh(a
+
+figure 
+plot(x,y); 
+title("Problem 4.8"); 
+xlabel("Length(x)"); 
+ylabel("Deflection(y)");
+xlim([0 10])
+ylim([0 .12])
+grid minor; 

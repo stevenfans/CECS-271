@@ -1,0 +1,50 @@
+% Suppose you despot $50 in the back account every month for a year. Every
+% month, after the deposit has been made, interest at the rate of 1% is 
+% added to the balace: after one month the balace is $50.50, and after 
+% two months it is $101.51. Write a program to compute and print the balance
+% each month for a year.
+clc; close all;
+
+deposit = 50; 
+interest_rate = 0.01; 
+month = (1:12);
+balance = zeros(1,2);
+
+ts = 100.50 * 1.01
+
+
+ fprintf('%0s%25s\n', 'MONTH', 'MONTH-END BALANCE');
+
+% balance = (balance+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+% balance(end+1) = (balance(end)+deposit)*1.01;
+
+balance(1) = deposit*(1+interest_rate); %initial value
+ for i=2:12
+     balance(i) = (balance(i-1)+(deposit))*(1+interest_rate);
+ end
+
+disp([month' balance']);
+
+%% 
+format bank % Format bank upto two decimals and rounds
+deposit = 50; % Start Balance
+startingbalance = 0;
+balance  = [];
+interest = 0.01;
+month = [];
+
+monthly = 1:1:12;
+balance(end+1) = ([(startingbalance + deposit) * interest] + (startingbalance + deposit))
+
+
+
