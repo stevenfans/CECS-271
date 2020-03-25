@@ -69,7 +69,7 @@ disp('CENTRAL DIFFERENCE')
 fprintf('%9s%17s%20s\n', 'Step Size', 'Approx. Value','Rel Approx.Error');
 % disp the answers
 A = [h; central;central_error];
-fprintf('%0.7f    %0.7f        %3.7f\n', A)
+fprintf('%0.7f    %0.7f        %10.7f\n', A)
 
 
 
